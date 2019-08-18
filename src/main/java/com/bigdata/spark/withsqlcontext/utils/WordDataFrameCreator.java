@@ -1,9 +1,9 @@
-package com.bigdata.spark.withsql;
+package com.bigdata.spark.withsqlcontext.utils;
 
-import com.bigdata.spark.popularwords.service.WordsUtil;
+import com.bigdata.spark.popularwords.utils.WordsUtil;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.DataFrame;
+import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
 import org.apache.spark.sql.SQLContext;
@@ -20,7 +20,7 @@ public class WordDataFrameCreator {
     @Autowired
     private JavaSparkContext sc;
 
-    public DataFrame create(String pathToDir) {
+    public Dataset<Row> create(String pathToDir) {
         JavaRDD<Row> rdd = sc.textFile(pathToDir).flatMap(WordsUtil::getWords)
                 .map(RowFactory::create);
         return sqlContext.createDataFrame(rdd, DataTypes.createStructType(new StructField[]{

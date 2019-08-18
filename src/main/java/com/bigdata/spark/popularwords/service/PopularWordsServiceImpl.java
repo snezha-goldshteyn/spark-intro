@@ -1,6 +1,8 @@
 package com.bigdata.spark.popularwords.service;
 
 import com.bigdata.spark.popularwords.service.interfaces.PopularWordsService;
+import com.bigdata.spark.popularwords.utils.UserConfig;
+import com.bigdata.spark.popularwords.utils.WordsUtil;
 import org.apache.spark.api.java.JavaRDD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

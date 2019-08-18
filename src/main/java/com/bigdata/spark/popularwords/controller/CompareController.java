@@ -1,14 +1,14 @@
 package com.bigdata.spark.popularwords.controller;
 
-import com.bigdata.spark.popularwords.CompareObject;
+import com.bigdata.spark.CompareObject;
 import com.bigdata.spark.popularwords.service.interfaces.ArtistJudge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("compare")
+//@RestController
+//@RequestMapping("compare")
 public class CompareController {
 
     @Autowired

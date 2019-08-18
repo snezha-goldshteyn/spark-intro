@@ -1,4 +1,4 @@
-package com.bigdata.spark.popularwords;
+package com.bigdata.spark;
 
 public class CompareObject {
     private String artist1;

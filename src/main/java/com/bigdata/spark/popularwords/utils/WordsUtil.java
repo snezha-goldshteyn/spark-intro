@@ -1,11 +1,12 @@
-package com.bigdata.spark.popularwords.service;
+package com.bigdata.spark.popularwords.utils;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class WordsUtil {
-    public static List<String> getWords(String text) {
+    public static Iterator<String> getWords(String text) {
         List <String> words = new ArrayList<>();
         BreakIterator breakIterator = BreakIterator.getWordInstance();
         breakIterator.setText(text);
@@ -17,6 +18,6 @@ public class WordsUtil {
                 words.add(text.substring(firstIndex, lastIndex));
             }
         }
-        return words;
+        return words.iterator();
     }
 }

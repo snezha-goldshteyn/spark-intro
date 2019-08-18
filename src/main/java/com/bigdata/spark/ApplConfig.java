@@ -1,6 +1,5 @@
 package com.bigdata.spark;
 
-import com.bigdata.spark.popularwords.service.UserConfig;
 import com.bigdata.spark.popularwords.service.interfaces.PopularWordsService;
 import com.bigdata.spark.popularwords.service.PopularWordsServiceImpl;
 import org.apache.spark.SparkConf;
