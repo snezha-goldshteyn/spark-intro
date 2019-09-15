@@ -1,7 +1,11 @@
 package com.bigdata.spark;
 
+import com.bigdata.spark.popularwords.controller.CompareController;
+import com.bigdata.spark.popularwords.service.ArtistJudgeImpl;
+import com.bigdata.spark.popularwords.service.interfaces.ArtistJudge;
 import com.bigdata.spark.popularwords.service.interfaces.PopularWordsService;
 import com.bigdata.spark.popularwords.service.PopularWordsServiceImpl;
+import com.bigdata.spark.popularwords.utils.UserConfig;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SQLContext;
@@ -32,23 +36,14 @@ public class ApplConfig {
         return new SQLContext(sc());
     }
 
-//    @Bean
-//    public ArtistJudge artistJudge() {
-//        return new ArtistJudgeImpl();
-//    }
-
-//    @Bean
-//    public UserConfig userConfig() {
-//        return new UserConfig();
-//    }
+    @Bean
+    public ArtistJudge artistJudge() {
+        return new ArtistJudgeImpl();
+    }
 
     @Bean
     public PropertySourcesPlaceholderConfigurer configurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-//    @Bean
-//    public CompareController compareController() {
-//        return new CompareController();
-//    }
 }

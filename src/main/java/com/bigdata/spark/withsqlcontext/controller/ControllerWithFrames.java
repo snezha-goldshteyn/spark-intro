@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("compare")
 public class ControllerWithFrames {
-    String commonPath = "/Users/bodiabuzynovskyi/Desktop/Snezha/songs/";
+    String commonPath = "/Users/snezhana/Desktop/songs/";
 
     @Autowired
     public PopularWordsServiceUDF popularWordsServiceUDF;

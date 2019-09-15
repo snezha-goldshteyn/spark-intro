@@ -19,7 +19,7 @@ public class ArtistJudgeImpl implements ArtistJudge {
 
     @Override
     public List<String> topX(String artist, int x) {
-        JavaRDD<String> rdd = sc.textFile("/Users/bodiabuzynovskyi/Desktop/Snezha/songs/" + artist + "/*");
+        JavaRDD<String> rdd = sc.textFile("/Users/snezhana/Desktop/songs/" + artist + "/*");
         return popularWordsService.topX(rdd, x);
     }
 

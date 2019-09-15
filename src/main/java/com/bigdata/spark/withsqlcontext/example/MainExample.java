@@ -12,7 +12,7 @@ public class MainExample {
                 appName("linkedIn")
                 .master("local[*]")
                 .getOrCreate();
-        Dataset<Row> dataset = sparkSession.read().json("/Users/bodiabuzynovskyi/IdeaProjects/spark/src/main/resources/profiles.json");
+        Dataset<Row> dataset = sparkSession.read().json("profiles.json");
         dataset.show();
         dataset = dataset.withColumn("salary", col("age").multiply(10)
                 .multiply(size(col("keywords"))).multiply(2));

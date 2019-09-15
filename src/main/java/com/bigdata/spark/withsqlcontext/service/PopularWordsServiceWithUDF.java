@@ -1,14 +1,13 @@
 package com.bigdata.spark.withsqlcontext.service;
 
 import com.bigdata.spark.withsqlcontext.utils.GarbageFilter;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SQLContext;
-import org.apache.spark.sql.types.DataTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +17,6 @@ import static org.apache.spark.sql.functions.*;
 public class PopularWordsServiceWithUDF implements PopularWordsServiceUDF {
     @Autowired
     private GarbageFilter filter;
-
-    @Autowired
-    private SQLContext context;
-
-    @PostConstruct
-    public void registerUdf() {
-        context.udf().register(filter.udfName(), filter, DataTypes.BooleanType);
-    }
 
     @Override
     public List<String> mostUsedWords(Dataset<Row> lines, int amount) {
